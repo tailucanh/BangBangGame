@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------------------
+# This repository holds source code only. Game resources, the sample database
+# and the portable Python runtime come from the full package (see README).
+# ---------------------------------------------------------------------------
+
+# Original game resources (copyrighted, ~3 GB)
+/www/rez/
+/www/assets/
+/www/html5/assets*/
+/www/*.swf
+/www/*.swz
+/www/*.dat
+/www/*.cub
+/www/mdlist.xml
+
+# Asset catalogs generated from those resources (~200 MB)
+/www/html5/*catalog*.json
+
+# Third-party player bundled with the package (Ruffle 0.7.1, MIT/Apache-2.0)
+/www/html5/vendor_m82/
+
+# Game data tables, sample database, portable Python 3.13
+/data/xmlpack/
+/data/fileList_unpacked.xml
+/data/*.sqlite3
+/runtime/python/
+
+# Secrets and files generated at run time
+/data/admin_buff.key
+/data/certs/
+/data/packet_log/
+/data/*.sqlite3-wal
+/data/*.sqlite3-shm
+/data/*.sqlite3-journal
+/runtime/state/
+*.log
+*.pid
+__pycache__/
+*.pyc
+
+# Local backups and work folders
+/.backup-*/
+.work/
+.dist/
+
+# Development material that is not shipped
+/docs/
+/tests/
+/tools/
+/flash/
+/AGENTS.md
+/protocol_*.json
+**/provenance/
+
+# Editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
