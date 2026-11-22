@@ -27,7 +27,7 @@ Server riêng cho game bắn tank BangBang, viết lại bằng Python (chỉ d�
 | `www/html5/*.js`, `*.css`, `index.html` — client HTML5 | `www/html5/*catalog*.json` — danh mục tài nguyên (~200 MB) |
 | `www/admin/` — trang web buff | `www/html5/vendor_m82/` — trình phát Ruffle 0.7.1 |
 | `www/index.html`, `bots.html`, `offline.html` | `www/*.swf`, `*.swz`, `*.dat`, `*.cub`, `mdlist.xml` |
-| `Choi_Ngay.bat`, `data/advertise_host.txt` | `data/xmlpack/`, `data/bangbang.sqlite3`, `data/fileList_unpacked.xml` |
+| `StartGame.bat`, `data/advertise_host.txt` | `data/xmlpack/`, `data/bangbang.sqlite3`, `data/fileList_unpacked.xml` |
 | | `runtime/python/` — Python 3.13 portable x64 |
 
 ## 2. Cài đặt
@@ -48,7 +48,7 @@ Nếu chỉ có gói đầy đủ mà không dùng git, bạn có thể chép m�
 
 ## 3. Mở game và đăng nhập
 
-1. Nhấp đúp **`Choi_Ngay.bat`**.
+1. Nhấp đúp **`StartGame.bat`**.
 2. Giữ cửa sổ server mở và đợi dòng **SẴN SÀNG**.
 3. Trình duyệt tự mở hai trang: **game** và **web buff**.
 4. Trong trang game, nhập tài khoản rồi nhấn **Đăng nhập & vào sảnh**.
@@ -119,7 +119,7 @@ Trong trận đang diễn ra, trạng thái được lưu khoảng mỗi giây; 
 
 ## 9. Chơi LAN
 
-Bản hiện tại **chưa hỗ trợ LAN**. `Choi_Ngay.bat` chỉ nhận kết nối từ chính máy (`127.0.0.1`). Chỉ đổi địa chỉ bind là chưa đủ: client dùng `crypto.subtle` và `crypto.randomUUID`, vốn chỉ hoạt động trên `localhost` hoặc HTTPS, nên truy cập qua `http://192.168.x.x` sẽ lỗi nạp tài nguyên. Muốn chơi LAN cần thêm HTTPS với chứng chỉ được các máy khách tin cậy, mở tường lửa, và mỗi người một tài khoản riêng. Web buff luôn chỉ cho truy cập từ chính máy chủ.
+Bản hiện tại **chưa hỗ trợ LAN**. `StartGame.bat` chỉ nhận kết nối từ chính máy (`127.0.0.1`). Chỉ đổi địa chỉ bind là chưa đủ: client dùng `crypto.subtle` và `crypto.randomUUID`, vốn chỉ hoạt động trên `localhost` hoặc HTTPS, nên truy cập qua `http://192.168.x.x` sẽ lỗi nạp tài nguyên. Muốn chơi LAN cần thêm HTTPS với chứng chỉ được các máy khách tin cậy, mở tường lửa, và mỗi người một tài khoản riêng. Web buff luôn chỉ cho truy cập từ chính máy chủ.
 
 Lưu ý: nếu chạy thẳng `server\app.py` mà không truyền `--bind 127.0.0.1 --html5-local`, server sẽ mở cổng HTTP và cổng game TCP 49119 cho mọi máy trong mạng.
 
@@ -141,7 +141,7 @@ Lưu ý: nếu chạy thẳng `server\app.py` mà không truyền `--bind 127.0.
 
 | Đường dẫn | Vai trò |
 |---|---|
-| `server/portable_launcher.py` | Điểm vào của `Choi_Ngay.bat`: chọn cổng trống, kiểm tra môi trường, mở trình duyệt |
+| `server/portable_launcher.py` | Điểm vào của `StartGame.bat`: chọn cổng trống, kiểm tra môi trường, mở trình duyệt |
 | `server/app.py` | HTTP server (file tĩnh, đăng nhập, API, WebSocket `/html5/ws`) |
 | `server/html5_bridge.py` | Cầu nối WebSocket ↔ giao thức TCP gốc |
 | `server/sixcube_server.py` | Server game TCP: sảnh, phòng, trận solo/PvE |

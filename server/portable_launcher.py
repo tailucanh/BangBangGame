@@ -79,7 +79,7 @@ def main():
     if os.name != 'nt' or sys.maxsize < 2**32:
         raise RuntimeError('Gói portable này dành cho Windows 64-bit.')
     if sys.version_info[:3] != (3, 13, 15):
-        raise RuntimeError('Hãy chạy Choi_Ngay.bat để dùng đúng Python đi kèm.')
+        raise RuntimeError('Hãy chạy StartGame.bat để dùng đúng Python đi kèm.')
     database = args.database.resolve()
     if not database.is_file():
         raise RuntimeError('Thiếu database mẫu. Giải nén đầy đủ gói game; không tự tạo hoặc ghi đè save.')

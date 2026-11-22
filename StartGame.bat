@@ -1,7 +1,7 @@
 @echo off
 setlocal DisableDelayedExpansion
 cd /d "%~dp0"
-title BangBang - Choi ngay
+title BangBang - Start Game
 if not exist "%~dp0runtime\python\python.exe" (
   echo Thieu Python portable. Hay giai nen DAY DU goi game, khong chi tai file BAT.
   pause
